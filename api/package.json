@@ -137,6 +137,7 @@
     "toidentifier": "1.0.0",
     "tslib": "1.9.3",
     "type-is": "1.6.16",
+    "typescript": "^3.3.3",
     "unpipe": "1.0.0",
     "util.promisify": "1.0.0",
     "utils-merge": "1.0.1",
