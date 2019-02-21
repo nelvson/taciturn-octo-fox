@@ -15,20 +15,23 @@ const resolvers = {
   },
 };
 
-const server = new ApolloServer({ typeDefs, resolvers, introspection: true});
+const server = new ApolloServer({typeDefs, resolvers, introspection: true});
 
 const app = express();
-server.applyMiddleware({ app });
+server.applyMiddleware({app});
 
 const port = 4040;
 
-app.listen({ port }, () =>{
-	console.log(`🚀 Server ready at http://localhost:${port}${server.graphqlPath}`);
-	console.log('We are also live at http://13.67.110.102/');
-  },
-);
+app.listen({port}, () => {
+  console.log(
+    `🚀 Server ready at http://localhost:${port}${server.graphqlPath}`,
+  );
+  console.log('We are also live at http://13.67.110.102/');
+});
 
 app.get('/', (req, res) => {
-	res.status(200);
-	res.send('hello there, this is where the fun begins. more nit changes. using nodemon now');
+  res.status(200);
+  res.send(
+    'hello there, this is where the fun begins. more nit changes. using nodemon now',
+  );
 });

@@ -53,6 +53,7 @@
     "array-flatten": "1.1.1",
     "async-limiter": "1.0.0",
     "async-retry": "1.2.3",
+    "babel-core" : "^6.6.0",
     "backo2": "1.0.2",
     "body-parser": "1.18.3",
     "busboy": "0.3.0",
@@ -148,7 +149,26 @@
     "ws": "6.1.4",
     "yallist": "3.0.3",
     "zen-observable": "0.8.13",
-    "zen-observable-ts": "0.8.15"
+    "zen-observable-ts": "0.8.15",
+    "jest": "^23.6.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "@types/body-parser": "^1.17.0",
+    "@types/jest": "^23.3.13",
+    "@types/jsonwebtoken": "^8.3.0",
+    "@types/mongodb": "^3.1.19",
+    "babel-preset-minify": "^0.5.0",
+    "babel-watch": "^2.0.8",
+    "jest": "^24.0.0",
+    "nodemon": "^1.18.9",
+    "prettier": "^1.16.2",
+    "prettier-tslint": "^0.4.2",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.12.1",
+    "tslint-config-kodefox": "^1.1.1",
+    "tslint-config-prettier": "^1.17.0",
+    "tslint-plugin-prettier": "^2.0.1"
   },
   "repository": {
     "type": "git",
