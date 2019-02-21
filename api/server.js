@@ -28,5 +28,5 @@ app.listen({ port }, () =>
 
 app.get('/', (req, res) => {
 	res.status(200);
-	res.send('hello there, this is where the fun begins. more nit changes');
+	res.send('hello there, this is where the fun begins. more nit changes. using nodemon now');
 });
