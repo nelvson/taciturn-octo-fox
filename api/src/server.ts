@@ -1,6 +1,3 @@
-//const express = require('express');
-//const { ApolloServer, gql } = require('apollo-server-express');
-
 import * as express from 'express';
 import {ApolloServer, gql} from 'apollo-server-express';
 
@@ -18,7 +15,7 @@ const resolvers = {
   },
 };
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({ typeDefs, resolvers});
 
 const app = express();
 server.applyMiddleware({ app });
