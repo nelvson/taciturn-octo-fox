@@ -1,6 +1,9 @@
 import * as express from 'express';
 import {ApolloServer, gql} from 'apollo-server-express';
 
+var bodyParser = require('body-parser');
+
+
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`
   type Query {
@@ -15,10 +18,18 @@ const resolvers = {
   },
 };
 
-const server = new ApolloServer({typeDefs, resolvers, introspection: true});
+const server = new ApolloServer({typeDefs, resolvers, introspection: true, playground: true  });
 
 const app = express();
 server.applyMiddleware({app});
+
+app.use(express.static(__dirname + '/public'));
+
+app.use(bodyParser.urlencoded({
+   extended: false
+}));
+
+app.use(bodyParser.json());
 
 const port = 4040;
 
@@ -29,9 +40,22 @@ app.listen({port}, () => {
   console.log('We are also live at http://13.67.110.102/');
 });
 
+
 app.get('/', (req, res) => {
   res.status(200);
   res.send(
-    'hello there, this is where the fun begins. more nit changes. using nodemon now',
+    'IT FINALLY WORKS!',
   );
+});
+
+//delete soon, for messing around only
+
+app.get('/zxc', (req, res) => {
+	res.status(200);
+	res.send('ayy');
+});
+
+app.get('/zxc/qwe', (req, res) => {
+	res.status(200);
+	res.send('ayy132');
 });

@@ -53,9 +53,9 @@
     "array-flatten": "1.1.1",
     "async-limiter": "1.0.0",
     "async-retry": "1.2.3",
-    "babel-core" : "^6.6.0",
+    "babel-core": "^6.6.0",
     "backo2": "1.0.2",
-    "body-parser": "1.18.3",
+    "body-parser": "^1.18.3",
     "busboy": "0.3.0",
     "bytes": "3.0.0",
     "content-disposition": "0.5.2",
@@ -101,6 +101,7 @@
     "is-regex": "1.0.4",
     "is-symbol": "1.0.2",
     "iterall": "1.2.2",
+    "jest": "^23.6.0",
     "lodash.sortby": "4.7.0",
     "long": "4.0.0",
     "lru-cache": "5.1.1",
@@ -149,8 +150,7 @@
     "ws": "6.1.4",
     "yallist": "3.0.3",
     "zen-observable": "0.8.13",
-    "zen-observable-ts": "0.8.15",
-    "jest": "^23.6.0"
+    "zen-observable-ts": "0.8.15"
   },
   "devDependencies": {
     "@types/bcrypt": "^3.0.0",
