@@ -3,16 +3,24 @@ export default {
   attributes: {
     id: {
       type: 'number',
-      required: true,
+      autoIncrement: true,
     },
     title: {
       type: 'string',
       required: true,
     },
-    memory: ['32MB', '64MB', '128MB'],
-    timelimit: ['0.5s', '1s', '2s'],
+    memory: {
+      type: 'json',
+    },
+    timelimit: {
+      type: 'json',
+    },
     description: {
       type: 'string',
+      required: true,
+    },
+    sampleIO: {
+      type: 'json',
       required: true,
     },
   },
