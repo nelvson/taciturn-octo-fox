@@ -2,6 +2,7 @@ import * as express from 'express';
 import {ApolloServer, gql} from 'apollo-server-express';
 
 import {getDB} from './db';
+import {problemRouter} from './routes';
 
 var bodyParser = require('body-parser');
 
@@ -19,7 +20,12 @@ const resolvers = {
   },
 };
 
-const server = new ApolloServer({typeDefs, resolvers, introspection: true, playground: true  });
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  introspection: true,
+  playground: true,
+});
 
 const app = express();
 server.applyMiddleware({app});
@@ -30,9 +36,11 @@ const initialise = async () => {
   app.locals.db = await getDB();
   app.use(express.static(__dirname + '/public'));
 
-  app.use(bodyParser.urlencoded({
-     extended: false
-  }));
+  app.use(
+    bodyParser.urlencoded({
+      extended: false,
+    }),
+  );
 
   app.use(bodyParser.json());
 
@@ -43,12 +51,11 @@ const initialise = async () => {
     console.log('We are also live at http://13.67.110.102/');
   });
 
+  app.use('/problems', problemRouter);
 
   app.get('/', (req, res) => {
     res.status(200);
-    res.send(
-      'IT FINALLY WORKS!',
-    );
+    res.send('IT FINALLY WORKS!');
   });
 
   //delete soon, for messing around only
@@ -62,7 +69,6 @@ const initialise = async () => {
     res.status(200);
     res.send('ayy132');
   });
-
 };
 
 initialise();

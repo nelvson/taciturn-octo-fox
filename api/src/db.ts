@@ -3,7 +3,7 @@ import {DB_URL, DB_NAME} from './constants';
 
 let db: Promise<Db> | undefined;
 
-async function connect(){
+async function connect() {
   const client = new MongoClient(DB_URL, {useNewUrlParser: true});
 
   try {
@@ -16,6 +16,6 @@ async function connect(){
 }
 
 export const getDB = async () => {
-  (db===null) ? db = connect() : true;
+  db === undefined ? (db = connect()) : true;
   return db;
 };

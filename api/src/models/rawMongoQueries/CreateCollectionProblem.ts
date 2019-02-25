@@ -9,11 +9,11 @@ db.createCollection('ProblemCollection', {
          description: 'must be a string and is required',
        },
         memory: {
-          bsonType: 'int',
+          bsonType: 'number',
           description: 'must be a string and is required',
         },
         timelimit: {
-          bsonType: 'int',
+          bsonType: 'number',
           description: 'must be a string and is required',
           
         },
