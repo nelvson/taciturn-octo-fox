@@ -23,10 +23,31 @@ db.createCollection('ProblemCollection', {
           
         },
         sampleIO: {
-          bsonType: 'string',
-          description: 'must be a string and is required',
-          
+          bsonType: ['array'],
+          minItems: 1,
+          required: ['input', 'output'],
+          properties: {
+            input: {
+              bsonType: 'string',
+              description: 'must be a string and is required',
+            },
+            output: {
+              bsonType: 'string',
+              description: 'must be a string and is required',
+            },
+          },
         },
+        tags: {
+          bsonType: ['array'],
+          minItems: 1,
+          required: ['tagName'],
+          properties: {
+            tagName: {
+              bsonType: 'string',
+              description: 'must be a string and is required',
+            }
+          }
+        }
       }
     }
   }
