@@ -57,18 +57,6 @@ const initialise = async () => {
     res.status(200);
     res.send('IT FINALLY WORKS!');
   });
-
-  //delete soon, for messing around only
-
-  app.get('/zxc', (req, res) => {
-    res.status(200);
-    res.send('ayy');
-  });
-
-  app.get('/zxc/qwe', (req, res) => {
-    res.status(200);
-    res.send('ayy132');
-  });
 };
 
 initialise();
