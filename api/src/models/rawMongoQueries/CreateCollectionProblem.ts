@@ -18,9 +18,23 @@ db.createCollection('ProblemCollection', {
           
         },
         description: {
-          bsonType: 'string',
-          description: 'must be a string and is required',
-          
+          bsonType: ['array'],
+          minItems: 1,
+          required: ['descriptionText', 'descriptionInput', 'descriptionOutput'],
+          properties: {
+            descriptionText: {
+              bsonType: 'string',
+              description: 'must be a sring and is required',
+            },
+            descriptionInput: {
+              bsonType: 'string',
+              description: 'must be a string and is required',
+            },
+            descriptionOutput: {
+              bsonType: 'string',
+              description: 'must be a string and is required',
+            },
+          }
         },
         sampleIO: {
           bsonType: ['array'],
