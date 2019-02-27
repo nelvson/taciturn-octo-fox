@@ -9,7 +9,11 @@ export async function getProblem() {
   try {
     let result = await db.collection<Problems>('ProblemCollection');
 
-    arrProblem = await result.find().toArray();
+    arrProblem = await result.find({            // excluding any problems
+      'tags.tagName': {$nin:['__development']}, // with '__development'
+    },{                                         // tag
+      projection:{_id:1, title:1}
+    }).toArray();
     return {
       success: true,
       data: arrProblem,
