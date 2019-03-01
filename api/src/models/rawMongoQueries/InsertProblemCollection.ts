@@ -76,15 +76,16 @@ db.ProblemCollection.insert({
   ],
   sampleIO: [
     {
-      input: `aha
-xyzzy
-quick brown fox jumps over the lazy dog
-fbxeac
-  x
- b z a x c y
-bdfhjlnprtvxz
-
-az def`,
+      input:
+        'aha\n' +
+        'xyzzy\n' +
+        'quick brown fox jumps over the lazy dog\n' +
+        'fbxeac\n' +
+        '  x\n' +
+        ' b z a x c y\n' +
+        'bdfhjlnprtvxz\n' +
+        '\n' +
+        'az def',
       output:
         'a:a, h:h\n' +
         'x:z\n' +
