@@ -1,3 +1,3 @@
 import problemRouter from './ProblemRoutes';
-
-export {problemRouter};
+import apiRouter from './API';
+export {problemRouter, apiRouter};

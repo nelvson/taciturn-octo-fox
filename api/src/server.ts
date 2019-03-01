@@ -2,7 +2,7 @@ import * as express from 'express';
 import {ApolloServer, gql} from 'apollo-server-express';
 
 import {getDB} from './db';
-import {problemRouter} from './routes';
+import {problemRouter, apiRouter} from './routes';
 
 var bodyParser = require('body-parser');
 
@@ -51,7 +51,8 @@ const initialise = async () => {
     console.log('We are also live at http://13.67.110.102/');
   });
 
-  app.use('/problems', problemRouter);
+  // app.use('/problems', problemRouter);
+  app.use('/api', apiRouter);
 
   app.get('/', (req, res) => {
     res.status(200);
