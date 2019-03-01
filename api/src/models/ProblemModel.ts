@@ -17,7 +17,7 @@ export async function getProblem() {
         },
         {
           // tag
-          projection: {_id: 1, title: 1},
+          //         projection: {_id: 1, title: 1},
         },
       )
       .toArray();
