@@ -47,9 +47,7 @@ db.ProblemCollection.insert({
   sampleIO: [
     {
       input: '3\n' + '5 2\n' + '6 3\n' + '1234 233\n',
-      output: 'Case 1: 3\n'+
-'Case 2: 1\n'
-'Case 3: 25\n',
+      output: 'Case 1: 3\n' + 'Case 2: 1\n' + 'Case 3: 25\n',
     },
   ],
   tags: [
@@ -65,15 +63,12 @@ db.ProblemCollection.insert({
   timelimit: 1,
   description: [
     {
-      descriptionText: `A letter range is a set of alphabetically consecutive letters taken from the lowercase alphabetic characters 'a' through 'z'. The lowest and highest letters of the range, separated by a colon (the character ':'), are used to represent a letter range. For example, the range "a:c" represents the consecutive letters 'a', 'b', and 'c'. (quotes are not part of the range). The range "w:z" represents the letters 'w', 'x', 'y', and 'z'. The range "m:m" respresents the single letter 'm'. `,
-      descriptionInput: `Each line of input is one test case. Every test case contains one string, that can be empty and which letters may not be in alphabetical order, of lowercase letters (a-z) and spaces.
-
-The string will contain between 0 and 50 characters, inclusive.`,
-      descriptionOutput: `For each test case in the input, your program must print the letter ranges ordered alphabetically by the low value of each range. Letter ranges contained in the result must represent the largest possible sequences of increasing consecutive letters found in the input text. Ignore space characters and duplicate letters contained in the input.
-
-If the string is empty just print a new line.
-
-For example, the string "fb xee ac" has three letter ranges, "a:c" (the letters a, b, and c), "e:f" (the letters e and f) and "x:x" (the letter x). Please refer to the examples.`,
+      descriptionText: 'A letter range is a set of alphabetically consecutive letters taken from the lowercase alphabetic characters \'a\' through \'z\'. The lowest and highest letters of the range, separated by a colon (the character ':'), are used to represent a letter range. For example, the range "a:c" represents the consecutive letters \'a\', \'b\', and \'c\'. (quotes are not part of the range). The range "w:z" represents the letters \'w\', \'x\', \'y\', and \'z\'. The range "m:m" respresents the single letter \'m\'. ',
+      descriptionInput: 'Each line of input is one test case. Every test case contains one string, that can be empty and which letters may not be in alphabetical order, of lowercase letters (a-z) and spaces\n';
+'The string will contain between 0 and 50 characters, inclusive.',
+      descriptionOutput: 'For each test case in the input, your program must print the letter ranges ordered alphabetically by the low value of each range. Letter ranges contained in the result must represent the largest possible sequences of increasing consecutive letters found in the input text. Ignore space characters and duplicate letters contained in the input.\n\n'+
+'If the string is empty just print a new line.\n\n'+
+'For example, the string "fb xee ac" has three letter ranges, "a:c" (the letters a, b, and c), "e:f" (the letters e and f) and "x:x" (the letter x). Please refer to the examples.\n',
     },
   ],
   sampleIO: [
@@ -87,15 +82,15 @@ fbxeac
 bdfhjlnprtvxz
 
 az def`,
-      output: `a:a, h:h
-x:z
-a:z
-a:c, e:f, x:x
-x:x
-a:c, x:z
-b:b, d:d, f:f, h:h, j:j, l:l, n:n, p:p, r:r, t:t, v:v, x:x, z:z
-
-a:a, d:f, z:z`,
+      output: 'a:a, h:h\n'+
+'x:z\n'+
+'a:z\n'+
+'a:c, e:f, x:x\n'+
+'x:x\n'+
+'a:c, x:z\n'+
+'b:b, d:d, f:f, h:h, j:j, l:l, n:n, p:p, r:r, t:t, v:v, x:x, z:z\n'+
+'\n'+
+'a:a, d:f, z:z\n',
     },
   ],
   tags: [
