@@ -13,11 +13,13 @@ async function getProblemsController(
     res.status(200).json({
       success: true,
       data: result.data,
+      message: '',
     });
   } catch (e) {
     res.status(500).json({
       success: false,
-      data: 'failed',
+      data: [],
+      message: e,
     });
     return next(e);
   }
