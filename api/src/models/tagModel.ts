@@ -11,9 +11,7 @@ export async function getTag() {
 
     arrTag = await result.find({}, {projection: {_id: 0}}).toArray();
     return {
-      success: true,
       data: arrTag,
-      message: '',
     };
   } catch (e) {
     return {

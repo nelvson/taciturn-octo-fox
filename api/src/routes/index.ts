@@ -1,3 +1,7 @@
 import problemRouter from './ProblemRoutes';
 import apiRouter from './API';
-export {problemRouter, apiRouter};
+import tagRouter from './TagRoutes';
+
+// **** Export
+export default apiRouter;
+export {tagRouter, problemRouter};

@@ -1,13 +1,17 @@
 import {Router} from 'express';
 
-import {getProblemsController, getTagsController} from '../controllers';
-import {problemRouter} from '../routes';
+import {problemRouter} from '.';
+import tagRouter from './TagRoutes';
+
 let apiRouter = Router();
 
-//index
-//problemRouter.get('/', getTagsController);
+//index TODO: create response for /api/
+//apiRouter.get('/', getTagsController);
 
-//get All Problems
+//go to /problems
 apiRouter.use('/problems', problemRouter);
+
+//go to /tag
+apiRouter.use('/tags', tagRouter);
 
 export default apiRouter;

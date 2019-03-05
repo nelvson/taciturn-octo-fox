@@ -3,9 +3,10 @@ import {Db, ObjectID, FilterQuery} from 'mongodb';
 import {getDB} from '../db';
 import {Problems} from '../types';
 
-export async function getProblem() {
+let arrProblem: Array<Problems>;
+
+export async function getProblems() {
   let db: Db = await getDB();
-  let arrProblem: Array<Problems>;
   try {
     let result = await db.collection<Problems>('ProblemCollection');
 
@@ -21,12 +22,32 @@ export async function getProblem() {
       )
       .toArray();
     return {
-      success: true,
       data: arrProblem,
-      message: '',
     };
   } catch (e) {
     console.log(e);
+    return {
+      success: false,
+      data: [],
+      message: e,
+    };
+  }
+}
+
+export async function getProblem(problemId: number) {
+  let db: Db = await getDB();
+  try {
+    let result = await db.collection<Problems>('ProblemCollection');
+    arrProblem = await result
+      .find()
+      .skip(Number(problemId))
+      .limit(1)
+      .toArray();
+    console.log(arrProblem);
+    return {
+      data: arrProblem,
+    };
+  } catch (e) {
     return {
       success: false,
       data: [],

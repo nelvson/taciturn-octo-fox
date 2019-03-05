@@ -2,7 +2,7 @@ import * as express from 'express';
 import {ApolloServer, gql} from 'apollo-server-express';
 
 import {getDB} from './db';
-import {problemRouter, apiRouter} from './routes';
+import apiRouter, {problemRouter, tagRouter} from './routes';
 
 var bodyParser = require('body-parser');
 
