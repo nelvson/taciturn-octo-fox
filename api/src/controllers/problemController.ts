@@ -7,7 +7,6 @@ async function getProblemsController(
   res: Response,
   next: NextFunction,
 ) {
-  let problemId = null;
   try {
     let result = await getProblems();
     res.status(200).json({
@@ -30,7 +29,7 @@ async function getProblemController(
   res: Response,
   next: NextFunction,
 ) {
-  let problemId = req.params.problemId;
+  let problemId: number = Number(req.params.problemId);
   try {
     let result = await getProblem(problemId);
     res.status(200).json({

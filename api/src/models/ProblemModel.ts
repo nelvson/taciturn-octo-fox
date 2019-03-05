@@ -40,10 +40,9 @@ export async function getProblem(problemId: number) {
     let result = await db.collection<Problems>('ProblemCollection');
     arrProblem = await result
       .find()
-      .skip(Number(problemId))
+      .skip(problemId)
       .limit(1)
       .toArray();
-    console.log(arrProblem);
     return {
       data: arrProblem,
     };
