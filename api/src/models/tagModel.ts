@@ -10,7 +10,6 @@ export async function getTag() {
     let result = await db.collection<Tags>('TagCollection');
 
     arrTag = await result.find({}, {projection: {_id: 0}}).toArray();
-    console.log(arrTag);
     return {
       success: true,
       data: arrTag,

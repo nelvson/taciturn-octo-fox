@@ -9,7 +9,6 @@ async function getProblemsController(
 ) {
   try {
     let result = await getProblem();
-    console.log(result);
     res.status(200).json({
       success: true,
       data: result.data,

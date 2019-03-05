@@ -14,9 +14,8 @@ export async function getProblem() {
         {
           // excluding any problems
           'tags.tagName': {$nin: ['__development']}, // with '__development'
-        },
+        }, // tag
         {
-          // tag
           //         projection: {_id: 1, title: 1},
         },
       )
