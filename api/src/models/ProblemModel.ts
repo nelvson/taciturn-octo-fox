@@ -13,9 +13,9 @@ export async function getProblems() {
     arrProblem = await result
       .find(
         {
-          // excluding any problems
+          /*******************************************  excluding any problems */
           'tags.tagName': {$nin: ['__development']}, // with '__development'
-        }, // tag
+        } /******************************************** tag */,
         {
           //         projection: {_id: 1, title: 1},
         },

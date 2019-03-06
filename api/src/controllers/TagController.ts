@@ -1,6 +1,6 @@
 import {Request, Response, NextFunction} from 'express';
 
-import {getTag} from '../models/tagModel';
+import {getTags, getTag} from '../models/tagModel';
 
 async function getTagsController(
   req: Request,
@@ -8,7 +8,7 @@ async function getTagsController(
   next: NextFunction,
 ) {
   try {
-    let result = await getTag();
+    let result = await getTags();
     res.status(200).json({
       success: true,
       data: result.data,
@@ -24,4 +24,26 @@ async function getTagsController(
   }
 }
 
-export {getTagsController};
+async function getTagController(
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) {
+  try {
+    let result = await getTag(13);
+    res.status(200).json({
+      success: true,
+      data: result.data,
+      message: '',
+    });
+  } catch (e) {
+    res.status(500).json({
+      success: false,
+      data: [],
+      message: e,
+    });
+    return next(e);
+  }
+}
+
+export {getTagsController, getTagController};

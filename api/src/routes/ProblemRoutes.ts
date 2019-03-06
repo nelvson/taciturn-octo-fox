@@ -8,13 +8,14 @@ import {
 
 let problemRouter = Router();
 
-//index
-problemRouter.get('/', getRootController);
-
 //get All Problems
 problemRouter.get('/all', getProblemsController);
 
 //get problem on id
 problemRouter.get('/id/:problemId', getProblemController);
+
+//redirect if bad api path
+//TODO create global helper function to handle bad url path
+problemRouter.all('*', getRootController);
 
 export default problemRouter;
