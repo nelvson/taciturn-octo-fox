@@ -17,7 +17,7 @@ export async function getProblems() {
           'tags.tagName': {$nin: ['__development']}, // with '__development'
         } /******************************************** tag */,
         {
-          //         projection: {_id: 1, title: 1},
+          /*         projection: {_id: 1, title: 1},*/
         },
       )
       .toArray();
