@@ -52,6 +52,7 @@
     "array-flatten": "1.1.1",
     "async-limiter": "1.0.0",
     "async-retry": "1.2.3",
+    "axios": "^0.18.0",
     "babel-core": "^6.6.0",
     "backo2": "1.0.2",
     "body-parser": "^1.18.3",

@@ -30,7 +30,8 @@ async function getTagController(
   next: NextFunction,
 ) {
   try {
-    let result = await getTag(13);
+    let tagId: number = Number(req.params.tagId);
+    let result = await getTag(tagId);
     res.status(200).json({
       success: true,
       data: result.data,

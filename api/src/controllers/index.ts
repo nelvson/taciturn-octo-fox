@@ -1,4 +1,9 @@
 import {getProblemsController, getProblemController} from './problemController';
-import {getTagsController} from './tagController';
+import {getTagsController, getTagController} from './tagController';
 
-export {getProblemsController, getProblemController, getTagsController};
+export {
+  getProblemsController,
+  getProblemController,
+  getTagsController,
+  getTagController,
+};

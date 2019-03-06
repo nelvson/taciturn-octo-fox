@@ -1,12 +1,11 @@
 import {Router} from 'express';
 
-import {getTagsController} from '../controllers';
+import {getTagsController, getTagController} from '../controllers';
 
 let tagRouter = Router();
 
 tagRouter.get('/', getTagsController);
 
-//
-//tagRouter.get('/tags/:tagId', getTagController);
+tagRouter.get('/id/:tagId', getTagController);
 
 export default tagRouter;
