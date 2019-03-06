@@ -1,6 +1,11 @@
 import {Request, Response, NextFunction} from 'express';
 
+import {BAD_API_PATH} from '../constants';
 import {getProblems, getProblem} from '../models/problemModel';
+
+function getRootController(req: Request, res: Response, next: NextFunction) {
+  res.status(404).json({...BAD_API_PATH});
+}
 
 async function getProblemsController(
   req: Request,
@@ -47,4 +52,4 @@ async function getProblemController(
   }
 }
 
-export {getProblemsController, getProblemController};
+export {getProblemsController, getProblemController, getRootController};
