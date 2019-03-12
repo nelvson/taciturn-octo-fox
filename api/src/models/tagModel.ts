@@ -25,15 +25,28 @@ export async function getTags() {
 export async function getTag(tagId: number) {
   let db: Db = await getDB();
   let arrResult: Array<Problems>;
+  let arrTag: Array<Tags>;
+  let tagName: string;
   try {
-    let result = await db.collection<Problems>('ProblemCollection');
-    arrResult = await result
+    let tagDB = await db.collection<Tags>('TagCollection');
+    arrTag = await tagDB
       .find()
-      .skip(tagId)
+      .skip(tagId - 1)
       .limit(1)
       .toArray();
+    ({tagName} = arrTag[0]);
+
+    let result = await db.collection<Problems>('ProblemCollection');
+    arrResult = await result
+      .find({
+        'tags.tagName': tagName,
+      })
+      .toArray();
     return {
-      data: arrResult,
+      data: {
+        tag: tagName,
+        problems: arrResult,
+      },
     };
   } catch (e) {
     return {

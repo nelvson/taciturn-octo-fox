@@ -107,3 +107,56 @@ db.ProblemCollection.insert({
     },
   ],
 });
+
+db.ProblemCollection.insert({
+  title: 'Anagram Checker',
+  memory: 64000,
+  timelimit: 1,
+  description: [
+    {
+      descriptionText:
+        'It is often fun to see if rearranging the letters of a name gives an amusing anagram. For example, theletters of ‘WILLIAM SHAKESPEARE’ rearrange to form ‘SPEAK REALISM AWHILE’.\n' +
+        'Write a program that will read in a dictionary and a list of phrases and determine which words fromthe dictionary, if any, form anagrams of the given phrases. Your program must find all sets of words inthe dictionary which can be formed from the letters in each phrase. Do not include the set consistingof the original words. If no anagram is present, do not write anything, not even a blank line.',
+      descriptionInput:
+        'Input will consist of two parts. The first part is the dictionary, the second part is the set of phrasesfor which you need to find anagrams. Each part of the file will be terminated by a line consisting of asingle ‘#’. The dictionary will be in alphabetic order and will contain up to 2000 words, one word perline. The entire file will be in upper case, and no dictionary word or phrase will contain more than 20 letters. You cannot assume the language being used is English\n',
+      descriptionOutput:
+        'Output will consist of a series of lines. Each line will consist of the original phrase, a space, an equalsign (=), another space, and the list of words that together make up an anagram of the original phrase,separated by exactly one space. These words must appear in alphabetic sequence.\n',
+    },
+  ],
+  sampleIO: [
+    {
+      input:
+        'ABC\n' +
+        'AND\n' +
+        'DEF\n' +
+        'DXZ\n' +
+        'K\n' +
+        'KX\n' +
+        'LJRST\n' +
+        'LT\n' +
+        'PT\n' +
+        'PTYYWQ\n' +
+        'Y\n' +
+        'YWJSRQ\n' +
+        'ZD\n' +
+        'ZZXY\n' +
+        '#\n' +
+        'ZZXY ABC DEF\n' +
+        'SXZYTWQP KLJ YRTD\n' +
+        'ZZXY YWJSRQ PTYYWQ ZZXY\n',
+      output:
+        'SXZYTWQP KLJ YRTD = DXZ K LJSRT PTYYWQ\n' +
+        'SXZYTWQP KLJ YRTD = DXZ K LT PT Y YWJSRQ\n' +
+        'SXZYTWQP KLJ YRTD = KX LJSRT PTYYWQ ZD\n' +
+        'SXZYTWQP KLJ YRTD = KX LT PT Y YWJSRQ ZD\n',
+    },
+  ],
+  tags: [
+    {
+      tagName: 'Strings',
+    },
+    {
+      tagName: 'Ad-hoc',
+    },
+  ],
+});
