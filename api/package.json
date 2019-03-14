@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "react-scripts test --env=jsdom",
     "start": "nodemon"
   },
   "dependencies": {
@@ -127,6 +127,7 @@
     "qs": "6.5.2",
     "range-parser": "1.2.0",
     "raw-body": "2.3.3",
+    "react-scripts": "^2.1.8",
     "retry": "0.12.0",
     "safe-buffer": "5.1.2",
     "safer-buffer": "2.1.2",
