@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "lint": "slint -p tsconfig.json src/**/*.{ts,tsx}",
+    "lint": "tslint -p tsconfig.json src/**/*.{ts,tsx}",
     "test": "yarn lint && jest --coverage --passWithNoTests", 
     "start": "nodemon"
   },
