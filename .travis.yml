@@ -4,6 +4,6 @@ node_js:
 env:
   - API=api
 before_script:
-  - cd $API
+  - cd $API && yarn
 script:
   - yarn test;
