@@ -1,4 +1,4 @@
-import * as express from 'express';
+import express from 'express';
 import {ApolloServer, gql} from 'apollo-server-express';
 
 import {getDB} from './db';
@@ -27,7 +27,7 @@ const server = new ApolloServer({
   playground: true,
 });
 
-const app = express();
+const app: express.Application = express();
 server.applyMiddleware({app});
 
 const port = 4040;
@@ -54,7 +54,7 @@ const initialise = async () => {
   // app.use('/problems', problemRouter);
   app.use('/api', apiRouter);
 
-  app.get('/', (req, res) => {
+  app.get('/', (req: express.Request, res: express.Response) => {
     res.status(200);
     res.send('IT FINALLY WORKS!');
   });
