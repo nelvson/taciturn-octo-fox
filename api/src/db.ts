@@ -16,7 +16,7 @@ async function connect() {
 }
 
 export const getDB = async () => {
-  if (db === undefined) {
+  if (db === undefined) { 
     db = connect();
   }
   return db;
