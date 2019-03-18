@@ -1,5 +1,9 @@
 language: node_js
 node_js:
   - '8'
+env:
+  - API=api
+before_script:
+  - cd $API && yarn
 script:
-  - nodemon;
+- yarn test;
